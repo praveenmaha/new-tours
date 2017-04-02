@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -21,8 +22,10 @@ public class SeleniumWrapper {
 	{
 		if(browserName.toLowerCase().equals("chrome"))
 		{
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("chrome.switches","--disable-extensions");
 			System.setProperty("webdriver.chrome.driver", currentDir+"./drivers/chromedriver.exe");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 		}
 		else if(browserName.toLowerCase().equals("ie"))
 		{
