@@ -3,12 +3,12 @@
 *.war
 *.ear
 *.class
-*.html
-*.xml
-
-test-output/
-.metadata
 bin/
+.settings/
+test-output/
+
+.metadata
+
 tmp/
 *.tmp
 *.bak
